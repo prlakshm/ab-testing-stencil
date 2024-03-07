@@ -1,0 +1,129 @@
+/*
+    @ STUDENTS: You probably won't need to modify this stylesheet
+ */
+
+@font-face {
+    font-family: 'PPNeueMontreal';
+    src: url(fonts/PPNeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: 'PPNeueMontrealBook';
+    src: url(fonts/PPNeueMontreal-Book.otf);
+}
+
+@font-face {
+    font-family: 'PPNeueMontrealThin';
+    src: url(fonts/PPNeueMontreal-Thin.otf);
+}
+
+.screen-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #F6FAFF;
+}
+
+.nav-bar, .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-bar {
+    justify-content: space-between;
+    background-color: #D4E8FF;
+    box-shadow: 0 0 20 rgba(0, 0, 0, 0.05);
+}
+
+.user-info {
+    width: 292px;
+    padding-right: 39px;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 45px;
+    padding-left: 42px;
+    font-family: 'PPNeueMontreal';
+    border: none;
+    background-color: #D4E8FF;
+}
+
+.username {
+    font-size: 30px;
+    font-family: 'PPNeueMontrealBook';
+    color: #6B6B6B;
+}
+
+.profile-photo {
+    width: 71px;
+    height: 71px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+}
+
+.side-nav-bar, .side-nav-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-nav-bar {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    width: 308px;
+    gap: 60px;
+    border-right: 1px solid #E4E4E4;
+    background-color: white;
+}
+
+.side-nav-section {
+    gap: 16px;
+}
+
+.side-nav-section-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-left: 40px;
+}
+
+.side-nav-section-header {
+    padding-left: 40px;
+}
+
+.side-nav-section-header, .side-nav-section-text, .current-selected-section-text {
+    font-size: 20px;
+    color: #868686;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.side-nav-section-header, .side-nav-section-text {
+    font-family: 'PPNeueMontrealBook';
+}
+
+.current-selected-section-text {
+    font-family: 'PPNeueMontreal';
+}
+
+#current-selected-row {
+    background-color: #F6F6F6;
+    width: 225px;
+    border-radius: 3px;
+    padding: 10px 0 10px 8px;
+    /* this is a hack don't @ me */
+    margin-left: 32px;
+}

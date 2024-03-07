@@ -1,0 +1,108 @@
+<!--
+    @ STUDENTS: DO NOT MODIFY THIS FILE!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS1300 AB Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            padding: 5px 0 0 15px;
+            font-size: 120%;
+        }
+        button {
+            background-color: #e7e7e7;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="download-utils.js" defer></script>
+    <script defer>
+        // On load, update the select version input to reflect most recently selected version
+        onload = () =>
+            document.querySelector('#version-selector').value
+            = localStorage.getItem('cs1300-ab-testing-version') ?? 'B'; // default to B
+
+
+        // redirect user to either A or B, on click of start buttons
+        const redirectAB = () => {
+            // initialize local storage to store data, if not there
+            const data = localStorage.getItem("cs1300-ab-testing-data");
+            if (data == null) {
+                console.log('setting storage')
+                localStorage.setItem("cs1300-ab-testing-data", JSON.stringify([]));
+            }
+
+            // get the correct inputted version inside
+            const {value: version} = document.querySelector('#version-selector');
+            // update local storage upon return
+            localStorage.setItem('cs1300-ab-testing-version', version);
+            switch (version) {
+                case 'B':
+                    location.href = "b.html";
+                    break;
+                case 'A':
+                    location.href = "a.html";
+                    break;
+                default:
+                    location.href = Math.random() > .5 ? "a.html" : "b.html";
+                    break;
+            }
+        };
+
+        const downloadAB = () => {
+            // get the data from local storage, ensure not nullish
+            let data = localStorage.getItem("cs1300-ab-testing-data");
+            data = JSON.parse(data);
+            if (!data) {
+                alert("Error: local storage is corrupted or empty!");
+                console.error("Error: local storage is corrupted or empty!");
+                localStorage.clear();
+                return;
+            }
+
+            const csv = buildcsv(data);
+            download(csv);
+
+            // clear local storage for future uses
+            localStorage.clear();
+        }
+    </script>
+</head>
+<body>
+    <h2>
+        cs1300 AB Testing Start Screen
+    </h2>
+    <p>
+        <strong>Task: </strong> Schedule an appointment with Adam Ng, MD at Morristown Medical Center on April 23, 2024
+    </p>
+    <button onclick="redirectAB()">Start Task</button>
+    <br />
+    <br />
+    <button onclick="downloadAB()">Download & Clear Current Data</button>
+    <br />
+    <br />
+    <label>
+        <select id="version-selector">
+            <option value="B">Version B (for students)</option>
+            <option value="A">Version A (for TA)</option>
+            <option value="R">Random (for real-world)</option>
+        </select>
+    </label>
+</body>
+</html>

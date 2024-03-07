@@ -1,0 +1,134 @@
+/*
+    @ STUDENTS: EDIT THIS FILE TO MODIFY THE CSS RULES OF B.HTML
+ */
+
+@font-face {
+    font-family: 'PPNeueMontreal';
+    src: url(fonts/PPNeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: 'PPNeueMontrealBook';
+    src: url(fonts/PPNeueMontreal-Book.otf);
+}
+
+@font-face {
+    font-family: 'PPNeueMontrealThin';
+    src: url(fonts/PPNeueMontreal-Thin.otf);
+}
+
+.appointments-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    margin: 47px auto 47px 51px;
+    padding: 21px 22px 0 22px;
+    min-width: 60em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-container-name {
+    font-size: 20px;
+    font-family: 'PPNeueMontrealBook';
+    color: #868686;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: #DADADA;
+    margin-top: 0;
+    margin-bottom: 17px;
+}
+
+.appointment-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.appointment-date {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+
+.date-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: right;
+    font-size: 24px;
+    font-family: 'PPNeueMontrealThin';
+}
+}
+
+.appointment-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 280px;
+
+.appointment-title, .appointment-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #868686;
+}
+
+.appointment-title {
+    font-size: 24px;
+    font-family: 'PPNeueMontreal';
+}
+
+.appointment-text {
+    font-size: 20px;
+    font-family: 'PPNeueMontrealBook';
+}
+}
+
+.appointment-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 45%;
+
+.defunct-button, .working-button {
+    background-color: #D4E8FF;
+    border: none;
+    border-radius: 9px;
+    width: 180px;
+    height: 45px;
+    color: white;
+}
+}
+
+.success-dialog {
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+.dialog-text {
+    font-family: 'PPNeueMontrealBook';
+    font-size: 20px;
+    color: #868686;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.dialog-button {
+    margin-top: 10px;
+    width: 150px;
+    border: none;
+    background-color: #D4E8FF;
+    border-radius: 9px;
+    padding: 14px 21px 14px 21px;
+    color: white;
+}
+}
+
+.success-dialog::backdrop {
+    background-color: black;
+    opacity: 20%;
+}
